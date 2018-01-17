@@ -29,7 +29,7 @@ PROC name DATA = dataset_name;
     run;
 ```
 
-# <a name="SAS"></a>SAS Dataset
+# <a name="Dataset"></a>SAS Dataset
 - SAS dataset
   - Descriptor (Metadata) 
   - Data Portion
@@ -64,6 +64,39 @@ libname bios722 '/informatics/BIOS722_Spring2018/Data_Files/'
 
 # <a name="Example"></a>Examples of steps
 
+Use **PROC CONTENTS** to output the metadata
+```
+* Output dataset descriptor for SASHELP.HEART;
+proc contents data=sashelp.heart;
+run;
+```
+
+**PROC PRINT** allows you to print the dataset
+```
+* Print the first 5 observations of SASHELP.HEART;
+proc print data=sashelp.heart (obs=5);
+run;
+```
+
+**PROC FREQ** is a useful procedure to summarize your data
+```
+* Print summary stats for sex, death status, and cause of death ignoring cumulative statistics;
+proc freq data=sashelp.heart;
+    tables status deathcause sex / nocum; /* nocum: remove the cumulative column */
+run;
+```
+
+**PROC SGPLOT** produce a scatter plot
+```
+* Evaluate relationship between weight and systolic blood pressure; 
+title 'Relationship between Weight and Systolic BP (by Gender)';
+proc sgplot data=sashelp.heart;
+  scatter x=weight y=systolic / group=sex;
+  reg x=weight y=systolic/ group=sex;
+  xaxis grid label='Weight (lbs)';
+  yaxis grid label='Systolic BP (mmHg)';
+run;
+```
 
 # <a name="ManipulateDataset"></a>Manipulating SAS Datasets
 1. DROP     = tells SAS which variables should be excluded from the SAS dataset
@@ -71,4 +104,50 @@ libname bios722 '/informatics/BIOS722_Spring2018/Data_Files/'
 3. OBS      = specifies the last observation to be read from a dataset by position
 4. FIRSTOBS = specifies the first observation to be read from a dataset by position
 5. WHERE    = (condition) - specifies a logical condition that must be satisfied in orderfor an observation to be retained.
+
+Firstobs = 3  
+obs = 5  
+=> **three observations: 3~5**
+
+Firstobs = 5  
+obs = 5  
+=> **the fifth observation**
+
+Example
+```
+data heart_reduced;
+  set sashelp.heart (keep=sex status deathcause);
+run;
+
+proc print data=heart_reduced (firstobs=5 obs=10);
+run;
+```
+
+The code below only load the three columns of the dataset
+```
+data heart_reduced;
+    set sashelp.heart (keep=sex status deathcause);
+run;
+```
+
+This read the whole things and output three columns
+```
+data heart_reduced (keep=sex status deathcause) ;
+    set sashelp.heart ;
+run;
+```
+
+below create errors
+```
+data heart_reduced (firstobs=5 obs=10);
+    set sashelp.heart (keep=sex status deathcause);
+run;
+```
+
+but your can do this instead
+```
+data heart_reduced;
+    set sashelp.heart (keep=sex status deathcause firstobs=5 obs=10);
+run;
+```
 
