@@ -4,8 +4,10 @@
 - [Examples of steps](#Example)
 - [Manipulating SAS Datasets](#ManipulateDataset)
 
+
 # <a name="Review"></a>Review: Step & Statment 
-[Outline](#Outline)
+[[Back to Outline]](#Outline)
+
 Syntax
 - end with a semicolons
   - one statement can continue over several lines
@@ -31,6 +33,8 @@ PROC name DATA = dataset_name;
 ```
 
 # <a name="Dataset"></a>SAS Dataset
+[[Back to Outline]](#Outline)
+
 - SAS dataset
   - Descriptor (Metadata) 
   - Data Portion
@@ -64,6 +68,7 @@ libname bios722 '/informatics/BIOS722_Spring2018/Data_Files/'
 ```
 
 # <a name="Example"></a>Examples of steps
+[[Back to Outline]](#Outline)
 
 Use **PROC CONTENTS** to output the metadata
 ```
@@ -100,6 +105,8 @@ run;
 ```
 
 # <a name="ManipulateDataset"></a>Manipulating SAS Datasets
+[[Back to Outline]](#Outline)
+
 1. DROP     = tells SAS which variables should be excluded from the SAS dataset
 2. KEEP     = tells SAS which variables to retain in the SAS dataset
 3. OBS      = specifies the last observation to be read from a dataset by position
