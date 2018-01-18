@@ -4,6 +4,9 @@
 - [Examples of steps](#Example)
 - [Manipulating SAS Datasets](#ManipulateDataset)
 
+The code used in this note.
+- [180117_01_Create_Libref.sas](https://github.com/clintko/LearnCode_SAS/blob/master/code/180117_01_Create_Libref.sas)
+- [180117_02_Examples.sas](https://github.com/clintko/LearnCode_SAS/blob/master/code/180117_02_Examples.sas)
 
 # <a name="Review"></a>Review: Step & Statment 
 [[Back to Outline]](#Outline)
