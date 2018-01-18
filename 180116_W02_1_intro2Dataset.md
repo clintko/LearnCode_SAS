@@ -61,11 +61,23 @@ Template
 <libname libref 'directory-path-goes-here' <options>;>
 ```
 
-Example  
+Example 01 
 ```
 libname bios722 '/informatics/BIOS722_Spring2018/Data_Files/'
     access=readonly;
 ```
+
+Example 02
+```
+/* reference to a folder */
+libname testlib '/informatics/BIOS722_Spring2018/Data_Files';
+
+/* reference to a path to your home directory*/
+libname testlib2 '~/Topic_0';
+```
+
+![Create_libref](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_01_Create_Libref.png?raw=true)
+
 
 # <a name="Example"></a>Examples of steps
 [[Back to Outline]](#Outline)
@@ -103,6 +115,10 @@ proc sgplot data=sashelp.heart;
   yaxis grid label='Systolic BP (mmHg)';
 run;
 ```
+
+- Note:
+  - Title is also a special statement
+  - to reset the title, simply run ```title;``` to set title to blank
 
 # <a name="ManipulateDataset"></a>Manipulating SAS Datasets
 [[Back to Outline]](#Outline)
