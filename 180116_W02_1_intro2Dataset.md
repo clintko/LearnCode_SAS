@@ -78,7 +78,6 @@ libname testlib '/informatics/BIOS722_Spring2018/Data_Files';
 /* reference to a path to your home directory*/
 libname testlib2 '~/Topic_0';
 ```
-
 ![Create_libref](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_01_Create_Libref.png?raw=true)
 
 
@@ -91,6 +90,8 @@ Use **PROC CONTENTS** to output the metadata
 proc contents data=sashelp.heart;
 run;
 ```
+![Example_PROC CONTENTS](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_02_SASHelpHeart_Contents.png?raw=true)
+
 
 **PROC PRINT** allows you to print the dataset
 ```
@@ -98,6 +99,8 @@ run;
 proc print data=sashelp.heart (obs=5);
 run;
 ```
+![Example_PROC PRINT](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_03_SASHelpHeart_Obs5.png?raw=true)
+
 
 **PROC FREQ** is a useful procedure to summarize your data
 ```
@@ -106,6 +109,8 @@ proc freq data=sashelp.heart;
     tables status deathcause sex / nocum; /* nocum: remove the cumulative column */
 run;
 ```
+![Example_PROC FREQ](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_04_SASHelpHeart_Freq.png?raw=true)
+
 
 **PROC SGPLOT** produce a scatter plot
 ```
@@ -118,6 +123,8 @@ proc sgplot data=sashelp.heart;
   yaxis grid label='Systolic BP (mmHg)';
 run;
 ```
+![Example_PROC SGPLOT](https://github.com/clintko/LearnCode_SAS/blob/master/img/W02_05_SASHelpHeart_Weight_vs_SBP.png?raw=true)
+
 
 - Note:
   - Title is also a special statement
