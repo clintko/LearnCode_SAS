@@ -7,6 +7,7 @@
 The code used in this note.
 - [180117_01_Create_Libref.sas](https://github.com/clintko/LearnCode_SAS/blob/master/code/180117_01_Create_Libref.sas)
 - [180117_02_Examples.sas](https://github.com/clintko/LearnCode_SAS/blob/master/code/180117_02_Examples.sas)
+- [180117_03_ManipulateData.sas](https://github.com/clintko/LearnCode_SAS/blob/master/code/180117_03_ManipulateData.sas)
 
 # <a name="Review"></a>Review: Step & Statment 
 [[Back to Outline]](#Outline)
